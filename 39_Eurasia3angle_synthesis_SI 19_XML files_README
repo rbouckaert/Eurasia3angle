@@ -32,8 +32,7 @@ These analyses contain nested sampling analyses with a subchain-length of 500000
 
 By changing the first line of the tea254pdcov-ucln-fbd-constrained.xml file, it becomes an adaptive coupled MCMC analysis with 4 chain (1 cold, 3 hot) with target acceptance probability of 0.1, resampled every 500 samples and a chain length of 100 million samples. Four instances were run to ensure the same posterior was obtained, which was checked in Tracer by inspecting overlap of marginal distributions of all parameters and other logged entities (prior, posterior, etc.), after removing 10% burn-in (though one chain took a bit longer to become stationary and a burn-in of 30% was required). We verified that all parameters and other logged entities obtained an effective sample (ESS) size of 200 or more.
 
-
-
+Note that time is in units of centuries in the language analyses and is going forward, so a tip date of 20 is interpreted as a date at the year 2000 CE, a calibration with mean -1.5 indicates the calibration has a mean at the year 150 BCE.
 
 
 ## Phylogeography analysis for languages:
@@ -58,5 +57,5 @@ The above files contain adaptive coupled MCMC analysis with four chains and a ch
 
 Further, the 8 models were run with nested sampling with a sub-chain length of 500000 samples and 1 particle. By running four instances of each of them, it was verified by ascertaining log marginal likelihood estimates were within 2 standard deviations of each other, that the subchain length is sufficiently long. Marginal likelihood estimates are presented in SI 20. The XML files above are made into nested sampling runs by replacing the opening run element with <run id="mcmc" spec="beast.gss.NS" chainLength="1000000000" subChainLength="500000" preBurnin="0" particleCount="1" epsilon="1e-13">.
 
-
+Note that time is in units of years and goes backward in time.
 
